@@ -1,0 +1,158 @@
+.title{
+    display: flex;
+    color: rgb(0, 0, 0);
+    opacity: 50%;
+    font-size: 20pt;
+    align-items: flex-start;
+
+}
+.title2{
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    align-items: flex-start;
+    font-weight: bold;
+
+}
+.title3{
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    align-items: flex-start;
+    font-weight: bold;
+}
+
+.title4{
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    align-items: flex-start;
+    font-weight: bold;
+    padding-top: 5%;
+}
+
+
+.subtitle{
+    
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    min-width: 5%;
+    align-items: flex-start;
+    font-weight: bold;
+
+}
+.subtitle1{
+    
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    min-width: 5%;
+    align-items: flex-start;
+    font-weight: bold;
+    margin-left: 5%;
+
+}
+.radio2{
+    
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    min-width:10%;
+    align-items: flex-start;
+    font-weight: bold;
+ 
+
+}
+.radio3{
+    
+    color: rgb(0, 0, 0);
+    font-size: 12pt;
+    min-width: 38%;
+    align-items: flex-start;
+    font-weight: bold;
+ 
+
+}
+.radio1{
+    
+   padding-bottom: 5%;
+ }
+
+ .provider-submit-btn1{
+
+    
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 4px;
+    width: 150px;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 35%;
+    margin-right: 35%;    
+
+ }
+ .provider-submit-btn1:disabled{
+
+    
+    border-radius: 4px;
+    background-color: #f4420b77;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 4px;
+    width: 150px;
+    cursor: pointer;
+    margin: 5px;
+    margin-left: 35%;
+    margin-right: 35%;    
+
+ }
+
+ .provider-profile-card{
+     display: flex;
+ }
+
+ .div-principal{
+     padding: 2rem;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px ;
+    transition: 0.5s;
+    animation: ease-in-out;
+    margin-left: 30px;
+    background-color: rgb(239, 248, 255);
+
+ }
+
+ .container-agendamento{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin-bottom: 10px;
+     height: 100%;
+
+ }
+
+ h3{
+     text-align: center;
+     padding-bottom: 25px;
+     font-size: 18pt;
+ 
+ }
+
+ .NoVisible{
+     display: none;
+ }
+
+ .div1{
+     padding-bottom: 8px;
+ }

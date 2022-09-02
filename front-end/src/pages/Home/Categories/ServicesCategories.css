@@ -1,0 +1,380 @@
+.action{
+
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
+
+}
+
+.action .category{
+    margin-top: 5em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.action .category .img-container
+{
+    position: relative;
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.action .category .img-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.action .menu_category_reparo {
+    z-index: 2;
+    top: 65%;
+    position: absolute;
+    justify-self: flex-start;
+    height: auto;
+    padding: 10px 5px;
+    background: rgb(91, 171, 196);
+    width: 15px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+
+.action .menu_category_hidraulica {
+    z-index: 2;
+    top: 65%;
+    position: absolute;
+    height: auto;
+    padding: 10px 5px;
+    background: rgb(91, 171, 196);
+    width: 15px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+
+.action .menu_category_pintura {
+    z-index: 2;
+    top: 65%;
+    position: absolute;
+    height: auto;
+    padding: 10px 5px;
+    background: rgb(91, 171, 196);
+    width: 15px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.action .menu_category_jardin {
+    z-index: 2;
+    top: 65%;
+    position: absolute;
+    height: auto;
+    padding: 10px 5px;
+    background: rgb(91, 171, 196);
+    width: 15px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.action .menu_category_outros{
+    z-index: 2;
+    top: 65%;
+    position: absolute;
+    height: auto;
+    padding: 10px 5px;
+    background: rgb(91, 171, 196);
+    width: 15px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.category_name{
+   text-align: center;
+    top: 90px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.action .menu_category_reparo.active{
+    width: 220px;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.action .menu_category_hidraulica.active{
+    width: 220px;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.action .menu_category_pintura.active{
+    width: 220px;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.action .menu_category_jardin.active{
+    width: 220px;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.action .menu_category_outros.active{
+    width: 220px;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.action .menu_category_reparo h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: rgb(0, 0, 0);
+
+}
+
+
+.action .menu_category_hidraulica h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: rgb(0, 0, 0);
+
+}
+
+
+.action .menu_category_pintura h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: rgb(0, 0, 0);
+
+}
+
+
+.action .menu_category_jardin h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: rgb(0, 0, 0);
+
+}
+
+
+.action .menu_category_outros h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2em;
+    color: rgb(0, 0, 0);
+
+}
+
+
+.action .menu_category_reparo ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    direction: flex;
+    align-items: center;
+    
+
+
+}
+
+.action .menu_category_hidraulica ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    direction: flex;
+    align-items: center;
+    
+
+
+}
+
+.action .menu_category_pintura ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    direction: flex;
+    align-items: center;
+    
+
+
+}
+
+.action .menu_category_jardin ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    direction: flex;
+    align-items: center;
+    
+
+
+}
+
+.action .menu_category_outros ul li {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    direction: flex;
+    align-items: center;
+    
+
+
+}
+
+
+
+
+.action .menu_category_reparo ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+
+.action .menu_category_hidraulica ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+
+.action .menu_category_pintura ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.action .menu_category_jardin ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.action .menu_category_outros ul li img {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+.action .menu_category_reparo ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.action .menu_category_hidraulica ul li a{
+
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+    
+}
+
+.action .menu_category_pintura ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.action .menu_category_jardin ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.action .menu_category_outros ul li a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.action .menu_category_reparo ul li a:hover  {
+    color: rgb(61, 58, 58);
+    transition: 0.2s;
+}
+
+.action .menu_category_hidraulica ul li a:hover  {
+    color: rgb(61, 58, 58);
+    transition: 0.2s;
+}
+.action .menu_category_pintura ul li a:hover  {
+    color: rgb(61, 58, 58);
+    transition: 0.2s;
+}
+.action .menu_category_jardin ul li a:hover  {
+    color: rgb(61, 58, 58);
+    transition: 0.2s;
+}
+.action .menu_category_outros ul li a:hover  {
+    color: rgb(61, 58, 58);
+    transition: 0.2s;
+}
+
+
