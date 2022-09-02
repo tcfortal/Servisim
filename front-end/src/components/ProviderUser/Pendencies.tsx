@@ -18,7 +18,7 @@ interface props {
   data_servico: string;
   time: string;
   value?: number;
-  valor_pago: number|null;
+  valor_pago: number | null;
   address: string;
   details: string;
 }
@@ -41,7 +41,7 @@ export const ProviderPendencies: React.FC<props> = ({
 }) => {
   const [confirmado, setConfirmado] = useState<boolean>(false);
   const [negado, setNegado] = useState<boolean>(false);
-  const [token] = useState<string>(JSON.parse(localStorage.getItem("token")));
+ const [token] = useState<string>(JSON.parse(localStorage.getItem("token") as string));
 
   const ModalConfirmation = () => {
     const [open, setOpen] = useState(false);
@@ -106,11 +106,11 @@ export const ProviderPendencies: React.FC<props> = ({
       setConfirmado(true)
     };
 
-    
 
-    
 
-    
+
+
+
     return (
       <>
         <Button
@@ -177,13 +177,13 @@ export const ProviderPendencies: React.FC<props> = ({
         p: 4,
       },
     };
-    
-    const handleNegate = async ()=>{
+
+    const handleNegate = async () => {
       handleClose();
       deleteServices2(id, token);
       setNegado(true)
     }
-    
+
     return (
       <>
         <Button
@@ -205,7 +205,7 @@ export const ProviderPendencies: React.FC<props> = ({
             <Box sx={style.innerBox}>
               <Button color="error" variant="contained" className="modal-btn" onClick={handleNegate}>SIM</Button>
 
-              <Button  variant="outlined" className="modal-btn" onClick={handleClose}>
+              <Button variant="outlined" className="modal-btn" onClick={handleClose}>
                 NÃO
               </Button>
             </Box>

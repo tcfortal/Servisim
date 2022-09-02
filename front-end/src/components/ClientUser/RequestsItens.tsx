@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Ellipse from "../../assests/Ellipse.png"
 import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
-import { deleteServices, updateServices,addComments } from "../../services/api";
+import { deleteServices, updateServices, addComments } from "../../services/api";
 import axios from "axios";
-import {parseISO, differenceInHours,differenceInDays,differenceInMinutes  } from "date-fns";
+import { parseISO, differenceInHours, differenceInDays, differenceInMinutes } from "date-fns";
 
 interface props {
   id: string;
@@ -44,35 +44,35 @@ export const RequestItens: React.FC<props> = ({
   const [cancelar, setCancelar] = useState<boolean>(false);
   const [cancelavel, setCancelavel] = useState(false)
   const [encerrar, setEncerrar] = useState(false)
-  const [token] = useState<string>(JSON.parse(localStorage.getItem("token")));
+  const [token] = useState<string>(JSON.parse(localStorage.getItem("token") as string));
   //user differenceInDays && differenceInHours && differenceInMinutes  para calcular a possibilidade de alertar a diferença em horas. 
   const dataAtual = new Date()
-    let posPostagem =differenceInHours( dataAtual, parseISO(data_postagem))
-    let preServico = differenceInDays(dataAtual, parseISO(data_servico))
-    let atraso = differenceInMinutes(dataAtual,parseISO(data_servico))
+  let posPostagem = differenceInHours(dataAtual, parseISO(data_postagem))
+  let preServico = differenceInDays(dataAtual, parseISO(data_servico))
+  let atraso = differenceInMinutes(dataAtual, parseISO(data_servico))
 
 
-    useEffect(()=>{
-      setLoadding(true)
-      UpdateCancelavel()
-    },[cancelavel,avaliar,cancelar,encerrar])
+  useEffect(() => {
+    setLoadding(true)
+    UpdateCancelavel()
+  }, [cancelavel, avaliar, cancelar, encerrar])
 
-    function UpdateCancelavel() {
-      if(atraso >= 30 || posPostagem <= 2 || preServico <=-2){
-        return setCancelavel(true)
-      }else{
-        return setCancelar(false)
-      }
+  function UpdateCancelavel() {
+    if (atraso >= 30 || posPostagem <= 2 || preServico <= -2) {
+      return setCancelavel(true)
+    } else {
+      return setCancelar(false)
     }
-    
+  }
+
 
   //console.log("dataAtual:",dataAtual);
-  
+
   //console.log(posPostagem ); // se for -2 horas pode cancelar
   //console.log(atraso ); // se for 30 min pode cancelar
   //console.log(preServico) // se for -2 dias pode cancelar;
-   
-   
+
+
   const ModalAvaliation = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -115,7 +115,7 @@ export const RequestItens: React.FC<props> = ({
     };
     const handleAvaliation = async () => {
       //console.log(id, " confirmado");
-      let commentData={
+      let commentData = {
         id_provedor: id_provedor,
         comentario: comment.trim(),
         estrelas: star
@@ -158,12 +158,12 @@ export const RequestItens: React.FC<props> = ({
           aria-describedby="modal-modal-description"
         >
           <Box sx={style.Box}>
-            <Button variant="contained" style={{alignSelf:"flex-end"}} color="error" className="modal-btn" onClick={handleClose}>
-            <ClearIcon/>
+            <Button variant="contained" style={{ alignSelf: "flex-end" }} color="error" className="modal-btn" onClick={handleClose}>
+              <ClearIcon />
             </Button>
-            <Stack direction="column" style={{justifyContent:"center", alignItems:"center", width:"100%"}} spacing={2}>
+            <Stack direction="column" style={{ justifyContent: "center", alignItems: "center", width: "100%" }} spacing={2}>
               <h3 style={style.title}>Avaliação</h3>
-              {id_provedor == "62a0d5c374005acb5fc701c4"?(
+              {id_provedor == "62a0d5c374005acb5fc701c4" ? (
                 <Avatar
                   className="avatar"
                   sx={{
@@ -175,8 +175,8 @@ export const RequestItens: React.FC<props> = ({
                     maxHeight: "30%",
                   }}
                   src={Ellipse}
-                > 
-                </Avatar>):(
+                >
+                </Avatar>) : (
                 <Avatar
                   className="avatar"
                   sx={{
@@ -189,49 +189,49 @@ export const RequestItens: React.FC<props> = ({
                   }}
                 >
                   {name ? iniciais(name) : "H"}
-                  
+
                 </Avatar>)}
               <h3>{name}</h3>
               <Rating
-                  className="stars"
-                  name="rating"
-                  value={star}
-                  onChange={(event, newValue) => {
+                className="stars"
+                name="rating"
+                value={star}
+                onChange={(event, newValue) => {
                   setStar(newValue);
-                  }}
-                  precision={1}
-                  size="large"
-                  sx={{
-                    fontSize: "3rem",
-                  }}
-                />
-                
-                <TextField
-                  id="required"
-                  label="Deixe um comentário"
-                  value={comment}
-                  fullWidth
-                  multiline
-                  minRows={4}
-                  maxRows={6}
-                  onChange={(e)=>setComment(e.target.value)}
-                  inputProps={{ maxLength: 300 }}
-/>
+                }}
+                precision={1}
+                size="large"
+                sx={{
+                  fontSize: "3rem",
+                }}
+              />
+
+              <TextField
+                id="required"
+                label="Deixe um comentário"
+                value={comment}
+                fullWidth
+                multiline
+                minRows={4}
+                maxRows={6}
+                onChange={(e) => setComment(e.target.value)}
+                inputProps={{ maxLength: 300 }}
+              />
             </Stack>
-            
+
 
             <Box sx={style.innerBox}>
-              {star && comment.trim() !="" ?(
-              <Button variant="contained" color="success" onClick={handleAvaliation}>
-                {"Avaliar"}
-              </Button>
-              ):(
-              <Button variant="contained" color="success" disabled onClick={handleAvaliation}>
-              {"Avaliar"}
-              </Button>)}
-              
+              {star && comment.trim() != "" ? (
+                <Button variant="contained" color="success" onClick={handleAvaliation}>
+                  {"Avaliar"}
+                </Button>
+              ) : (
+                <Button variant="contained" color="success" disabled onClick={handleAvaliation}>
+                  {"Avaliar"}
+                </Button>)}
 
-              
+
+
             </Box>
           </Box>
         </Modal>
@@ -243,7 +243,7 @@ export const RequestItens: React.FC<props> = ({
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    
+
     const style = {
       Box: {
         position: "absolute",
@@ -272,17 +272,17 @@ export const RequestItens: React.FC<props> = ({
         color: "#d32f2f",
         fontWeight: 700,
       },
-      
+
       innerBox: {
         marginTop: "1rem",
-        width:"100%",
+        width: "100%",
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
         p: 4,
       },
     };
-    
+
 
     const handleCancel = async () => {
       deleteServices(id, token);
@@ -292,15 +292,15 @@ export const RequestItens: React.FC<props> = ({
 
     return (
       <>
-      <Button
+        <Button
           variant="contained"
           color="error"
           onClick={handleOpen}
           startIcon={<ClearIcon />}
         >
           Cancelar
-      </Button>
-        
+        </Button>
+
         <Modal
           open={open}
           onClose={handleClose}
@@ -314,14 +314,14 @@ export const RequestItens: React.FC<props> = ({
             <span style={style.text}> Com<b> 2 horas </b> depois de seu levantamento do pedido.</span>
             <span style={style.text}> Com <b>30 minutos</b> de atraso do horário do serviço.</span>
             <Box sx={style.innerBox}>
-              {cancelavel?(
+              {cancelavel ? (
                 <Button color="error" variant="contained" className="modal-btn" onClick={handleCancel}>SIM</Button>
-              ):(
+              ) : (
                 <Button color="error" variant="contained" className="modal-btn" disabled onClick={handleCancel}>SIM</Button>
               )}
-              
 
-              <Button  variant="outlined" className="modal-btn" onClick={handleClose}>
+
+              <Button variant="outlined" className="modal-btn" onClick={handleClose}>
                 NÃO
               </Button>
             </Box>
@@ -335,7 +335,7 @@ export const RequestItens: React.FC<props> = ({
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    
+
     const style = {
       Box: {
         position: "absolute",
@@ -364,17 +364,17 @@ export const RequestItens: React.FC<props> = ({
         color: "#111",
         fontWeight: 700,
       },
-      
+
       innerBox: {
         marginTop: "1rem",
-        width:"100%",
+        width: "100%",
         display: "flex",
         justifyContent: "space-around",
         alignItems: "center",
         p: 4,
       },
     };
-    
+
 
     const handleFinalizar = async () => {
       let data = {
@@ -392,34 +392,34 @@ export const RequestItens: React.FC<props> = ({
         __v: 0,
       };
       //updateServices(id,{ status: "confirmado" } )
-      updateServices(id,data)
+      updateServices(id, data)
       handleClose();
       setEncerrar(true);
     };
 
     return (
       <>
-      { atraso > 0 ?(
-        <Button
-          variant="contained"
-          color="success"
-          onClick={handleOpen}
-          startIcon={<CheckIcon />}
-        >
-          Finalizar Serviço
-        </Button>
-        ):(
+        {atraso > 0 ? (
           <Button
-          disabled
-          variant="contained"
-          color="success"
-          onClick={handleOpen}
-          startIcon={<CheckIcon />}
-        >
-          Finalizar Serviço
-        </Button>
+            variant="contained"
+            color="success"
+            onClick={handleOpen}
+            startIcon={<CheckIcon />}
+          >
+            Finalizar Serviço
+          </Button>
+        ) : (
+          <Button
+            disabled
+            variant="contained"
+            color="success"
+            onClick={handleOpen}
+            startIcon={<CheckIcon />}
+          >
+            Finalizar Serviço
+          </Button>
         )}
-        
+
         <Modal
           open={open}
           onClose={handleClose}
@@ -429,10 +429,10 @@ export const RequestItens: React.FC<props> = ({
           <Box sx={style.Box}>
             <h3 style={style.titleDecline}>Finalizar Serviço ?</h3>
             <Box sx={style.innerBox}>
-              
-                <Button color="success" variant="contained" className="modal-btn" onClick={handleFinalizar}>SIM</Button>
 
-              <Button  variant="outlined"  className="modal-btn" onClick={handleClose}>
+              <Button color="success" variant="contained" className="modal-btn" onClick={handleFinalizar}>SIM</Button>
+
+              <Button variant="outlined" className="modal-btn" onClick={handleClose}>
                 NÃO
               </Button>
             </Box>
@@ -461,33 +461,33 @@ export const RequestItens: React.FC<props> = ({
         <div className="card-header">
           <Grid item xs={2}>
             <div className="user-profile">
-              {id_provedor == "62a0d5c374005acb5fc701c4"?(
+              {id_provedor == "62a0d5c374005acb5fc701c4" ? (
                 <Avatar
                   className="avatar"
                   sx={{
-                  margin: 3,
-                  minWidth: 100,
-                  width: "100%",
-                  maxWidth: 100,
-                  height: 100,
-                  maxHeight: 100,
-                }}
+                    margin: 3,
+                    minWidth: 100,
+                    width: "100%",
+                    maxWidth: 100,
+                    height: 100,
+                    maxHeight: 100,
+                  }}
                   src={Ellipse}
-                > 
-                </Avatar>):(
+                >
+                </Avatar>) : (
                 <Avatar
                   className="avatar"
                   sx={{
-                  margin: 3,
-                  minWidth: 100,
-                  width: "100%",
-                  maxWidth: 100,
-                  height: 100,
-                  maxHeight: 100,
-                }}
+                    margin: 3,
+                    minWidth: 100,
+                    width: "100%",
+                    maxWidth: 100,
+                    height: 100,
+                    maxHeight: 100,
+                  }}
                 >
                   {name ? iniciais(name) : "H"}
-                  
+
                 </Avatar>)}
               <p> {name}</p>
             </div>
@@ -512,27 +512,27 @@ export const RequestItens: React.FC<props> = ({
             </Stack>
           </Grid>
           <div className="check-box-area">
-          
+
             <Stack direction="column" spacing={2}>
-            {/*<span className="status-indicator-field" >{status}</span>*/}
+              {/*<span className="status-indicator-field" >{status}</span>*/}
               {status == "concluido" ? (
-                  <ModalAvaliation />
-                
+                <ModalAvaliation />
+
               ) : null}
-              {status == "confirmado"  ? (
+              {status == "confirmado" ? (
                 <>
                   <ModalEncerrar />
                 </>
               ) : null}
               {status == "pendente" || status == "confirmado" ? (
                 <>
-                  
+
                   <ModalCancel />
                 </>
               ) : null}
-              </Stack>
-          
-            
+            </Stack>
+
+
           </div>
         </div>
 
