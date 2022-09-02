@@ -41,7 +41,7 @@ export const ProviderPendencies: React.FC<props> = ({
 }) => {
   const [confirmado, setConfirmado] = useState<boolean>(false);
   const [negado, setNegado] = useState<boolean>(false);
- const [token] = useState<string>(JSON.parse(localStorage.getItem("token") as string));
+  const [token] = useState<string>(JSON.parse(localStorage.getItem("token") as string));
 
   const ModalConfirmation = () => {
     const [open, setOpen] = useState(false);
