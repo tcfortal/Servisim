@@ -16,5 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["./src", "build/index.jsxsx"]
+  "include": [
+    "src"
+, "build/index.jsx", "public/index.jsx"  ]
 }
