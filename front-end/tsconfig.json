@@ -17,6 +17,5 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-, "build/index.jsx", "public/index.jsx"  ]
+    "src" ]
 }
