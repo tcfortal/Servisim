@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://servisim-api.herokuapp.com"
+    baseURL: "https://servisim-api2.herokuapp.com"
 });
 
 
