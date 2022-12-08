@@ -72,7 +72,7 @@ export const Agendamento = () => {
       nome_cliente,
     };
     console.log(dados);
-    axios.post("https://servisim-api.herokuapp.com/service", dados).then(() => {
+    axios.post("https://servisim-api2.herokuapp.com/service", dados).then(() => {
       navigate("/cliente");
       console.log(dados);
     });

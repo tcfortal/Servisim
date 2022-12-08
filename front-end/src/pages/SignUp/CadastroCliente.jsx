@@ -53,7 +53,7 @@ export const CadastroCliente = () => {
     };
 
     axios
-      .post("https://servisim-api.herokuapp.com/usuario", dados)
+      .post("https://servisim-api2.herokuapp.com/usuario", dados)
       .then(() => {
         setOpen(false);
         setAlert(false);

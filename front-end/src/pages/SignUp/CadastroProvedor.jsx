@@ -61,7 +61,7 @@ export const CadastroProvedor = () => {
       services,
     };
     axios
-      .post("https://servisim-api.herokuapp.com/services-provider", dados)
+      .post("https://servisim-api2.herokuapp.com/services-provider", dados)
       .then(() => {
         setOpen(false);
         setAlert(false);

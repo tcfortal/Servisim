@@ -55,7 +55,7 @@ export const ClientUpdate = () => {
 
         ///const token = JSON.parse(sessionStorage.getItem('token'));
 
-        axios.put(`https://servisim-api.herokuapp.com/usuario-update/${id}`, dados, {
+        axios.put(`https://servisim-api2.herokuapp.com/usuario-update/${id}`, dados, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

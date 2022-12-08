@@ -100,7 +100,7 @@ export const ProviderPendencies: React.FC<props> = ({
       };
       //updateServices(id,{ status: "confirmado" } )
       axios
-        .put(`https://servisim-api.herokuapp.com/service-update/${id}`, data)
+        .put(`https://servisim-api2.herokuapp.com/service-update/${id}`, data)
         .then((response) => console.log(response));
       handleClose();
       setConfirmado(true)

@@ -101,7 +101,7 @@ export const Agendamento = () => {
     console.log(dados);
     if (data_servico) {
       axios
-        .post("https://servisim-api.herokuapp.com/service", dados)
+        .post("https://servisim-api2.herokuapp.com/service", dados)
         .then(() => {
           //adicionar um alert
           setOpen(false);

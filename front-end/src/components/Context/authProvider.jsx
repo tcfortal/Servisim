@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createServidorSession } from "../../services/api";
 import axios from "axios";
-const db = `https://servisim-api.herokuapp.com/services-provider/login`;
+const db = `https://servisim-api2.herokuapp.com/services-provider/login`;
 import { Snackbar, Alert } from '@mui/material/';
 
 export const AuthProviderContext = createContext();

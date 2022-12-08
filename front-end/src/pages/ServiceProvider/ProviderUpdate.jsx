@@ -52,7 +52,7 @@ export const ProviderUpdate = () => {
 
         ///const token = JSON.parse(sessionStorage.getItem('token'));
 
-        axios.put(`https://servisim-api.herokuapp.com/services-update/${id}`, dados, {
+        axios.put(`https://servisim-api2.herokuapp.com/services-update/${id}`, dados, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
