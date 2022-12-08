@@ -74,7 +74,7 @@ export const AuthProvider = ({ children }) => {
   /*
   const logout = async () => {
 
-    axios.post("https://servisim-api.herokuapp.com/usuario/logout", token, {
+    axios.post("https://servisim-api2.herokuapp.com/usuario/logout", token, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
